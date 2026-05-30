@@ -16,12 +16,14 @@ function Home() {
     const [selectedCategory, setSelectedCategory] =
         useState("All");
 
+    const API_URL = import.meta.env.VITE_API_URL;
+
     const fetchProducts = async () => {
 
         try {
 
             const res = await axios.get(
-                "https://grocerymart-backend.onrender.com/api/products"
+                `${import.meta.env.VITE_API_URL}/api/products`
             );
             setProducts(res.data);
 

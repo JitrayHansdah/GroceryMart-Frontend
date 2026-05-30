@@ -8,6 +8,7 @@ import { CartContext } from "../context/CartContext";
 function Cart() {
 
     const navigate = useNavigate();
+    const API_URL = import.meta.env.VITE_API_URL;
 
     const [paymentMethod, setPaymentMethod] =
         useState("online");
@@ -74,7 +75,7 @@ function Cart() {
                 };
 
                 await axios.post(
-                    "${https://grocerymart-backend.onrender.com}/api/orders",
+                    `${import.meta.env.VITE_API_URL}/api/orders`,
                     orderData
                 );
 
@@ -88,13 +89,11 @@ function Cart() {
             // ONLINE PAYMENT
 
             const { data } = await axios.post(
-                "${https://grocerymart-backend.onrender.com}/api/payment/create-order",
+                `${import.meta.env.VITE_API_URL}/api/payment/create-order`,
                 {
-                    amount:
-                        totalPrice + 40,
+                    amount: totalPrice + 40,
                 }
             );
-
             const options = {
 
                 key:
@@ -137,7 +136,7 @@ function Cart() {
                     };
 
                     await axios.post(
-                        "${https://grocerymart-backend.onrender.com}/api/orders",
+                        `${import.meta.env.VITE_API_URL}/api/orders`,
                         orderData
                     );
 
