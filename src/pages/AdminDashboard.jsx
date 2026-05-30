@@ -27,7 +27,7 @@ function AdminDashboard() {
         try {
 
             const res = await axios.get(
-                "http://localhost:5000/api/products"
+                "${https://grocerymart-backend.onrender.com}/api/products"
             );
 
             setProducts(res.data);
@@ -67,7 +67,7 @@ function AdminDashboard() {
         try {
 
             await axios.post(
-                "http://localhost:5000/api/products",
+                "${https://grocerymart-backend.onrender.com}/api/products",
                 formData
             );
 

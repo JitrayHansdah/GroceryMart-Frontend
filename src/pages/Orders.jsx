@@ -23,7 +23,7 @@ function Orders() {
         try {
 
             const { data } = await axios.get(
-                `http://localhost:5000/api/orders/${user._id}`
+                `${import.meta.env.VITE_API_URL}/api/orders/${user._id}`
             );
 
             setOrders(data);
@@ -38,8 +38,9 @@ function Orders() {
 
         try {
 
+
             await axios.put(
-                `http://localhost:5000/api/orders/cancel/${id}`
+                `${import.meta.env.VITE_API_URL}/api/orders/cancel/${id}`
             );
 
             fetchOrders();

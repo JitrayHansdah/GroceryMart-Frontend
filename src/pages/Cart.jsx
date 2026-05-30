@@ -74,7 +74,7 @@ function Cart() {
                 };
 
                 await axios.post(
-                    "http://localhost:5000/api/orders",
+                    "${https://grocerymart-backend.onrender.com}/api/orders",
                     orderData
                 );
 
@@ -88,7 +88,7 @@ function Cart() {
             // ONLINE PAYMENT
 
             const { data } = await axios.post(
-                "http://localhost:5000/api/payment/create-order",
+                "${https://grocerymart-backend.onrender.com}/api/payment/create-order",
                 {
                     amount:
                         totalPrice + 40,
@@ -137,7 +137,7 @@ function Cart() {
                     };
 
                     await axios.post(
-                        "http://localhost:5000/api/orders",
+                        "${https://grocerymart-backend.onrender.com}/api/orders",
                         orderData
                     );
 
